@@ -1,0 +1,63 @@
+.top-bar{
+  z-index: 3;
+  font-family: "Rubik";
+  color: $main-white;
+  font-size: 16px;
+  line-height: 19px;
+  padding: 16px 0;
+  background-color: $main-green;
+  a {
+    transition: .3s ease-in-out;
+    color: $main-white;
+  }
+  a:hover{
+    text-decoration: none;
+    color: $main-yellow
+  }
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__auth{
+    display: flex;
+    align-items: center;
+  }
+  &__auth div:not(:last-child){
+    margin-right: 20px;
+  }
+}
+.language-dropdown{
+  position: relative;
+  cursor: pointer;
+  &__drop{
+    z-index: -1;
+    transition: .5s ease-in-out;
+    position: absolute;
+    top: -120px;
+    left: -7px;
+
+    padding: 10px;
+    min-width: 140px;
+
+    display: flex;
+    flex-direction: column;
+    background-color: $main-green;
+
+    a:not(:last-child){
+      margin-bottom: 10px;
+    }
+  }
+  &__arrow{
+    transition: .3s ease-in-out;
+  }
+}
+.language-dropdown span:nth-child(1){
+  margin-right: 8px;
+}
+.drop-show{
+  top: 35px;
+}
+.drop-svg-rotate{
+  transform: rotateZ(90deg);
+}
