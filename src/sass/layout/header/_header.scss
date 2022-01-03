@@ -1,0 +1,121 @@
+.header{
+  padding-top: 22px;
+  padding-bottom: 31px;
+  &__wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+.logo{
+  color: $main-black;
+  display: flex;
+  align-items: center;
+  &__text{
+    margin-left: 6px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
+.logo:hover{
+  color: inherit;
+}
+.control-panel a:not(:last-child){
+  margin-right: 21px;
+}
+.control-panel a:nth-child(odd) svg:hover {
+  path {
+    transition: .5s ease-in-out;
+    stroke: $main-green;
+    fill: $main-green;
+  }
+}
+.control-panel a:nth-child(even) svg:hover {
+  path {
+    transition: .5s ease-in-out;
+    stroke: $main-green;
+  }
+}
+
+.search {
+  position: relative;
+  z-index: 10;
+  input {
+    color: $main-green;
+    min-width: 582px;
+    outline: none;
+    padding: 7px 20px;
+    border: 2px solid $main-green;
+    border-radius: 8px;
+  }
+  input::placeholder{
+    font-size: 16px;
+    line-height: 17px;
+    color: #B0B0B0;
+  }
+  &__list{
+    cursor: pointer;
+    top: 5px;
+    right: 70px;
+    position: absolute;
+    span{
+      margin-left: 8px;
+    }
+    &-divider{
+      position: absolute;
+      top: -3px;
+      left: -10px;
+      height: 37px;
+      width: 2px;
+      background-color: rgba(227, 227, 227, 0.78);
+    }
+    &_menu-block{
+      position: relative;
+      z-index: 7;
+    }
+    &-show{
+      transition: .5s ease-in-out;
+      position: absolute;
+      top: 35px;
+      left: -2000px;
+      z-index: 3;
+      background-color: $main-green;
+      width: 100%;
+      border-bottom-right-radius: 8px;
+      border-bottom-left-radius: 8px;
+      height: 100px;
+      overflow-y: scroll;
+      padding: 25px 30px;
+      a{
+        transition: .5s ease-in-out;
+        color: $main-white;
+      }
+      a:hover{
+        color: gold;
+      }
+      a:not(:last-child){
+        margin-right: 15px;
+      }
+    }
+  }
+  &__icon{
+    background-color: $main-green;
+    padding: 4px 18px 7px 18px;
+    top: 0;
+    right: 0;
+    position: absolute;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+  &__icon svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+.categories-svg{
+  transition: .5s ease-in-out;
+}
+.show-categories {
+  left: 0;
+}

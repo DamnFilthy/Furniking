@@ -1,10 +1,8 @@
 .top-bar{
-  z-index: 3;
   font-family: "Rubik";
   color: $main-white;
   font-size: 16px;
   line-height: 19px;
-  padding: 16px 0;
   background-color: $main-green;
   a {
     transition: .3s ease-in-out;
@@ -20,6 +18,8 @@
     justify-content: space-between;
   }
   &__auth{
+    height: 50px;
+    position: relative;
     display: flex;
     align-items: center;
   }
@@ -28,10 +28,14 @@
   }
 }
 .language-dropdown{
+  height: 100%;
+  padding-top: 15px;
   position: relative;
+  z-index: 10;
+  background-color: $main-green;
   cursor: pointer;
   &__drop{
-    z-index: -1;
+    z-index: 9;
     transition: .5s ease-in-out;
     position: absolute;
     top: -120px;
@@ -56,7 +60,7 @@
   margin-right: 8px;
 }
 .drop-show{
-  top: 35px;
+  top: 40px;
 }
 .drop-svg-rotate{
   transform: rotateZ(90deg);

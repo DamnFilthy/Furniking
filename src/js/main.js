@@ -6,4 +6,11 @@ $(document).ready(function () {
         'drop-svg-rotate',
         '.js-drop-svg'
     );
+    dropDownMenu(
+        '.js-categories',
+        '.js-categories-show',
+        'show-categories',
+        'drop-svg-rotate',
+        '.js-categories-svg'
+    );
 })
