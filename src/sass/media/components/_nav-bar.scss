@@ -1,0 +1,26 @@
+@media (max-width: 947px){
+  .nav-bar__wrapper a:not(:first-child):not(:last-child) {
+    margin-right: 50px;
+  }
+}
+
+@media (max-width: 812px){
+  .nav-bar__wrapper a:not(:first-child):not(:last-child) {
+    margin-right: 17px;
+  }
+}
+
+@media (max-width: 647px){
+  .nav-bar__wrapper a:first-child {
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 617px){
+  .nav-bar__wrapper a:not(:first-child):not(:last-child) {
+    display: none;
+  }
+  .collection-links-menu a {
+    display: flex !important;
+  }
+}

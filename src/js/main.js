@@ -13,4 +13,11 @@ $(document).ready(function () {
         'drop-svg-rotate',
         '.js-categories-svg'
     );
+    dropDownMenu(
+        '.js-collections',
+        '.js-collections-show',
+        'show-collections',
+        'drop-svg-rotate',
+        '.js-collections-svg'
+    );
 })

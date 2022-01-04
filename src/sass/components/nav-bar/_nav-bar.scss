@@ -1,0 +1,81 @@
+.nav-bar{
+  height: 67px;
+  background-color: #F7F8FA;
+  &__wrapper{
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    a:not(:first-child){
+      color: $main-black;
+      font-size: 14px;
+      line-height: 17px;
+    }
+    a:not(:first-child):not(:last-child){
+      margin-right: 77px;
+    }
+    a:first-child{
+      margin-right: 40px;
+      text-decoration: none;
+    }
+    a:first-child:hover{
+      color: $main-white;
+    }
+  }
+}
+.all-collections{
+  cursor: pointer;
+  padding: 25px 25px 23px 25px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  background-color: $main-green;
+
+  color: $main-white;
+  font-weight: 500 ;
+  font-size: 16px;
+  line-height: 19px ;
+  letter-spacing: 0.02em;
+
+}
+.all-collections span:nth-child(1){
+  margin-right: 20px;
+}
+
+.collection-links-menu{
+  transition: .5s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+  animation: categories-animation-hidden .5s linear forwards;
+
+  width: 243px;
+  top: 67px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  a{
+    color: $main-black;
+    background-color: #F7F8FA;
+    padding: 10px 0 14px 29px;
+    border-bottom: 0.8px solid #E3E3E3;
+
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 0.02em;
+  }
+  a:first-child{
+    margin: 0 !important;
+  }
+  a:first-child:hover{
+    text-decoration: none;
+    color: $main-black;
+  }
+  a:not(:first-child):not(:last-child){
+    margin: 0 !important;
+  }
+}
+
+.show-collections {
+  visibility: visible;
+  opacity: 1;
+}
