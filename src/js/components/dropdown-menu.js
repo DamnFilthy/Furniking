@@ -23,3 +23,4 @@ function dropDownMenu(selectorBlock, selectorMenu, classToShow, classToRotate, s
         });
     })
 }
+export default dropDownMenu;

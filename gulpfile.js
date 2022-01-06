@@ -11,6 +11,8 @@ const uglify = require('gulp-uglify');
 const fileinclude = require('gulp-file-include');
 const babel = require('gulp-babel');
 
+const webpack = require("webpack-stream");
+
 const { STYLE_LIBS, JS_LIBS } = require('./gulp.config');
 
 gulp.task('server', function() {
@@ -47,7 +49,7 @@ gulp.task('watch', function() {
     gulp.watch("src/sass/**/*.+(scss|sass|css)", gulp.parallel('styles-main'));
     gulp.watch("src/*.html").on('change', gulp.parallel('html'));
     gulp.watch("src/html-pages/parts/**/*.html").on('change', gulp.parallel('html'));
-    gulp.watch("src/js/**/*.js").on('change', gulp.parallel('scripts-main'));
+    gulp.watch("src/js/**/*.js").on('change', gulp.parallel('webpack-build-js'));
 });
 
 gulp.task('html', function() {
@@ -66,11 +68,42 @@ gulp.task('html-pages', function() {
         .pipe(gulp.dest("dist/html-pages"));
 });
 
-gulp.task('scripts-main', function() {
-    return gulp.src(["src/js/**/*.js"])
-        .pipe(babel({ presets: ['es2015'] }))
-        .pipe(uglify())
-        .pipe(concat('main.min.js'))
+// gulp.task('scripts-main', function() {
+//     return gulp.src(["src/js/**/*.js"])
+//         .pipe(babel({ presets: ['es2015'] }))
+//         .pipe(uglify())
+//         .pipe(concat('main.min.js'))
+//         .pipe(gulp.dest("dist/js"));
+// });
+
+gulp.task("webpack-build-js", () => {
+    return gulp.src("src/js/**/*.js")
+        .pipe(webpack({
+            mode: 'development',
+            output: {
+                filename: 'script.js'
+            },
+            watch: false,
+            devtool: "source-map",
+            module: {
+                rules: [
+                    {
+                        test: /\.m?js$/,
+                        exclude: /(node_modules|bower_components)/,
+                        use: {
+                            loader: 'babel-loader',
+                            options: {
+                                presets: [['@babel/preset-env', {
+                                    debug: true,
+                                    corejs: 3,
+                                    useBuiltIns: "usage"
+                                }]]
+                            }
+                        }
+                    }
+                ]
+            }
+        }))
         .pipe(gulp.dest("dist/js"));
 });
 
@@ -103,12 +136,13 @@ gulp.task('default',
         'server',
         'styles-main',
         'styles-vendor',
-        'scripts-main',
+        // 'scripts-main',
         'scripts-vendor',
         'fonts',
         'icons',
         'images',
         'html',
-        'html-pages'
+        'html-pages',
+        'webpack-build-js'
     )
 );

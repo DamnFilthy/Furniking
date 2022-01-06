@@ -1,3 +1,5 @@
+import dropDownMenu from './components/dropdown-menu';
+
 $(document).ready(function () {
     dropDownMenu(
         '.js-language-dropdown',
