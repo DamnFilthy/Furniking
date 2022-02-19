@@ -1,6 +1,10 @@
 import dropDownMenu from './components/dropdown-menu';
+import showLoader from "./components/loader";
 
 $(document).ready(function () {
+
+    showLoader('.preloader', 'hide-preloader')
+
     dropDownMenu(
         '.js-language-dropdown',
         '.js-language-drop-show',

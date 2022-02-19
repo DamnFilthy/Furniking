@@ -1,0 +1,28 @@
+@media (max-width: 991px){
+  .collections{
+    &__wrapper{
+      flex-direction: column;
+      align-items: center;
+    }
+    &__block_big_1{
+      margin-right: 0;
+      margin-bottom: 15px;
+      width: 485px;
+      height: 247px;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+}
+@media (max-width: 500px){
+  .collections{
+    &__block_big_1{
+      width: 315px;
+    }
+    &__block_small{
+      width: 315px;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+}

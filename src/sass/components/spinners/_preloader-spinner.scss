@@ -1,0 +1,49 @@
+.preloader {
+  transition: 1s ease-in-out;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #e0e0e0;
+  z-index: 1001;
+  &__wrapper{
+    position: relative;
+    top: calc(50% - 5rem);
+    left: calc(50% - 3rem);
+  }
+}
+
+.big-circle {
+  position: absolute;
+  top: 0;
+  width: 5rem;
+  height: 5rem;
+  border: 5px solid #ffff;
+  border-radius: 50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-color: $main-green transparent $main-green $main-green;
+  animation: bigcircle 1.2s linear infinite;
+}
+.small-circle {
+  width: 3rem;
+  height: 3rem;
+  border: 5px solid #ffff;
+  border-radius: 50%;
+  border-color: $main-green  $main-green transparent $main-green;
+}
+
+@keyframes bigcircle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.hide-preloader{
+  opacity: 0;
+}

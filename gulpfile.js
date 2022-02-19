@@ -1,17 +1,17 @@
 const gulp = require('gulp');
-const browserSync = require('browser-sync');
 const sass = require('gulp-sass')(require('sass'));
+
+const browserSync = require('browser-sync');
 const cleanCSS = require('gulp-clean-css');
 const autoprefixer = require('gulp-autoprefixer');
 const rename = require("gulp-rename");
 const htmlmin = require('gulp-htmlmin');
-const concatCss = require('gulp-concat-css');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const fileinclude = require('gulp-file-include');
-const babel = require('gulp-babel');
 
 const webpack = require("webpack-stream");
+const TerserPlugin = require("terser-webpack-plugin");
 
 const { STYLE_LIBS, JS_LIBS } = require('./gulp.config');
 
@@ -68,20 +68,16 @@ gulp.task('html-pages', function() {
         .pipe(gulp.dest("dist/html-pages"));
 });
 
-// gulp.task('scripts-main', function() {
-//     return gulp.src(["src/js/**/*.js"])
-//         .pipe(babel({ presets: ['es2015'] }))
-//         .pipe(uglify())
-//         .pipe(concat('main.min.js'))
-//         .pipe(gulp.dest("dist/js"));
-// });
-
 gulp.task("webpack-build-js", () => {
     return gulp.src("src/js/**/*.js")
         .pipe(webpack({
             mode: 'development',
             output: {
-                filename: 'script.js'
+                filename: 'script.min.js'
+            },
+            optimization: {
+                minimize: true,
+                minimizer: [new TerserPlugin()],
             },
             watch: false,
             devtool: "source-map",
@@ -136,7 +132,6 @@ gulp.task('default',
         'server',
         'styles-main',
         'styles-vendor',
-        // 'scripts-main',
         'scripts-vendor',
         'fonts',
         'icons',
