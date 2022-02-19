@@ -1,0 +1,11 @@
+.green-price{
+  font-weight: bold;
+  font-size: 18px;
+  color: $main-green;
+}
+.sale-price{
+  font-weight: 600;
+  font-size: 18px;
+  color: $light-gray;
+  text-decoration: line-through;
+}

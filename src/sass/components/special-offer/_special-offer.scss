@@ -1,0 +1,77 @@
+.special-offer{
+  margin-bottom: 120px;
+  &__wrapper{
+    margin-top: 60px;
+    display: flex;
+  }
+  &__descr{
+    font-size: 12px;
+    color: $main-gray;
+    margin-bottom: 23px;
+  }
+  &__block{
+    padding-top: 28px;
+    padding-left: 24px;
+    width: 570px;
+    height: 249px;
+    position: relative;
+    &_1{
+      margin-right: 30px;
+      background: url("../media/images/Rectangle__45.png");
+    }
+    &_2{
+      background: url("../media/images/Rectangle_44.png");
+    }
+  }
+  &__prices{
+    display: flex;
+    margin-bottom: 25px;
+  }
+  &__button{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    padding: 0 10px;
+    color: $main-white;
+    font-weight: bold;
+    font-size: 12px;
+    background-color: $main-green;
+    border-radius: 2px;
+  }
+}
+.sales-block{
+  padding: 4px 8px;
+  color: $main-white;
+  background-color: $main-blue;
+  font-size: 12px;
+  border-bottom-left-radius: 8px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.offer-timer{
+  display: flex;
+  &__block{
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $main-green;
+    &-count{
+      font-weight: bold;
+      font-size: 16px;
+      color: $main-white;
+    }
+    &-date{
+      font-size: 8px;
+      text-transform: uppercase;
+      color: $main-white;
+    }
+  }
+  &__block:not(:last-child){
+    margin-right: 18px;
+  }
+}

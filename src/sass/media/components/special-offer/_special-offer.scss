@@ -1,0 +1,22 @@
+@media (max-width: 991px){
+  .special-offer__wrapper{
+    flex-direction: column;
+    align-items: center;
+  }
+  .special-offer__block_1{
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 595px){
+  .special-offer__block {
+    width: 375px;
+  }
+}
+
+@media (max-width: 385px){
+  .special-offer__block {
+    width: 315px;
+  }
+}

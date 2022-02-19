@@ -91,7 +91,7 @@ gulp.task("webpack-build-js", () => {
                             options: {
                                 presets: [['@babel/preset-env', {
                                     debug: true,
-                                    corejs: 3,
+                                    corejs: 2,
                                     useBuiltIns: "usage"
                                 }]]
                             }
