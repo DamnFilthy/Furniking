@@ -1,0 +1,126 @@
+.products{
+  margin-bottom: 120px;
+  &__title{
+    margin-bottom: 45px;
+  }
+  &__tab-nav{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 73px;
+    div{
+      cursor: pointer;
+      transition: .3s ease-in-out;
+      font-weight: 600;
+      font-size: 24px;
+      color: $link-gray;
+      &.active{
+        color: $main-green;
+      }
+    }
+    div:hover{
+      color: $main-green;
+    }
+  }
+  .tab-wrapper{
+    position: relative;
+    margin-bottom: 30px;
+    .tab{
+      display: none;
+      opacity: 0;
+      visibility: hidden;
+      transition: .3s ease-in-out;
+      width: 100%;
+    }
+    .tab-active{
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__item{
+    position: relative;
+    cursor: pointer;
+    margin-right: 3px;
+    margin-bottom: 24px;
+    &-wrapper{
+      padding: 7px;
+    }
+    &-type{
+      font-size: 14px;
+      color: rgba(117, 117, 117, 0.71);
+    }
+    &-name{
+      font-size: 20px;
+      color: #11142D;
+    }
+    &-bottom{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &_price{
+        display: flex;
+      }
+    }
+    .item-sale{
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: $main-white;
+      text-align: center;
+      font-size: 12px;
+      border-radius: 0 0 5px 0;
+      width: 44.68px;
+      height: 20.42px;
+    }
+    .sale{
+      background-color: $main-green;
+    }
+    .new{
+      background-color: $main-blue;
+    }
+    .sale-red{
+      background-color: $main-red;
+    }
+    &-links{
+      transition: .3s ease-in-out;
+      opacity: 0;
+      position: absolute;
+      top: 15px;
+      right: 7px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      a{
+        transition: .3s ease-in-out;
+        border-radius: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 38.85px;
+        height: 38.89px;
+        background-color: $main-white;
+        box-shadow: 0px 2px 33px rgba(0, 0, 0, 0.09);
+      }
+      a:not(:last-child){
+        margin-bottom: 8px;
+      }
+      a:hover{
+        background-color: $main-green;
+      }
+      a:hover svg path{
+       fill: $main-white;
+      }
+    }
+  }
+}
+
+.tab-1{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.products__item:hover .products__item-links{
+  opacity: 1;
+}
