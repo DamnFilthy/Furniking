@@ -1,0 +1,17 @@
+@media (max-width: 767px){
+  .products__tab-nav{
+    flex-wrap: wrap;
+  }
+  .pagination-block__btn {
+    margin-right: 18px;
+  }
+}
+@media (max-width: 442px){
+  .pagination-block__btn {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+  .pagination-block__wrapper {
+    flex-direction: column;
+  }
+}
