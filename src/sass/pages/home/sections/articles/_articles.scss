@@ -1,0 +1,48 @@
+.articles{
+  margin-bottom: 115px;
+  &__title{
+    margin-bottom: 56px;
+  }
+  &__wrapper{
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  &__item{
+    color: $main-white;
+    width: 533px;
+    margin-right: 15px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(interior-dark-blue-wall-with-yellow-sofa-decor-living-room.jpg);
+    border-radius: 8px;
+  }
+  .item-1{
+    background-image: url("../media/images/articles/article1.png");
+    @include bgc-img-contain;
+  }
+  .item-2{
+    background-image: url("../media/images/articles/article2.png");
+    @include bgc-img-contain;
+  }
+  .item-3{
+    background-image: url("../media/images/articles/article3.png");
+    @include bgc-img-contain;
+  }
+  .item-4{
+    background-image: url("../media/images/articles/article4.png");
+    @include bgc-img-contain;
+  }
+}
+
+.item-wrapper {
+  padding: 178px 35px 30px 44px;
+}
+.tag{
+  margin-right: 5px;
+  color: $main-green;
+  font-weight: 500;
+  font-size: 12px;
+  padding: 5px 8px;
+  background: #F8FAFB;
+  border-radius: 3px;
+}

@@ -9,3 +9,15 @@
   color: $light-gray;
   text-decoration: line-through;
 }
+.small-text{
+  font-size: 14px;
+}
+.article-title{
+  font-weight: bold;
+  font-size: 39px;
+}
+.article-link, .article-link:hover{
+  color: $main-white;
+  font-weight: 500;
+  font-size: 14px;
+}

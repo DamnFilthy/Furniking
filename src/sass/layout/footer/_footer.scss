@@ -1,0 +1,31 @@
+.footer{
+  font-size: 16px;
+  color: $main-black;
+  &__wrapper{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  a, a:hover{
+    color: $main-black;
+  }
+  &__column{
+    margin-right: 35px;
+    margin-bottom: 35px;
+  }
+  &__terms{
+    padding: 33px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    a:not(:last-child){
+      margin-right: 12px;
+    }
+  }
+}
+
+.footer-bold{
+  font-weight: 500;
+  font-size: 24px;
+}
