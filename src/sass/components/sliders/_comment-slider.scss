@@ -55,6 +55,12 @@
   left: 40px;
   position: absolute;
 }
+@media (max-width: 660px){
+  .slick-prev, .slick-next{
+    display: none;
+  }
+}
+
 @media (max-width: 505px){
   .comment-block {
     height: 500px;
